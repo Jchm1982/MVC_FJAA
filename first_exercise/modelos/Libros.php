@@ -1,6 +1,9 @@
 <?php
-//MI MODELO LIBROS
-class Libros {
+
+/*
+MODELO LIBROS
+*/
+class Libros{
 	private $db;
 	private $libros;
 
@@ -11,10 +14,12 @@ class Libros {
 
 	public function getLibros(){
 		$consulta = $this->db->query("SELECT * FROM libros");
-		//CREAMOS UN ARREGLO DE ARREHLOS ASOCIATIVOS
-		while($filas =$consulta->fetch_assoc()){
+		//CREAMOS UN ARREGLO DE ARREGLOS ASOCIADOS
+		while($filas = $consulta->fetch_assoc()){
 			$this->libros[] = $filas;
 		}
 		return $this->libros;
 	}
 }
+
+?>
